@@ -1,14 +1,8 @@
-const http = require("http");
+const Person = require("./person");
 
-const person = require("./person");
+const person1 = new Person('John Doe', 30);  
 
-const server = http.createServer((req, resp) => {
-  console.log("Incoming request:", req.url);
-  resp.writeHead(200, { "Content-Type": "application/json" });
-  resp.end(JSON.stringify({ name: "Shivani Lonare", email: "shivanilonare98@gmail.com" }));
-});
+person1.greeting();
 
-server.listen(8080, '0.0.0.0', () => {
-  console.log('Server listening on port test   8080');
-});
 
+console.log(Person);
